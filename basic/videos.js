@@ -25,3 +25,60 @@ const str = `<ul>
 // Tip: convertir a un array de objetos
 // Tip2: split
 
+
+
+function searchByName(cadena, array) {
+  let arrayAux = [];
+  array.forEach(element => {
+    let aux = element.search(cadena);
+    if (aux > -1) {
+      arrayAux.push(element);
+    }
+  });
+  return arrayAux;
+}
+
+function durationFilter(array) {
+  let arrayAux = [];
+  array.forEach(element => {
+    let aux = element.split('"');
+    arrayAux.push(aux[1]);
+  });
+  return arrayAux;
+}
+function minutesSecondsFilter(array) {
+  let arrayAux = [];
+  array.forEach(element => {
+    let aux = element.split(":");
+    const objeto = {
+      minutos: parseInt(aux[0]),
+      segundos: parseInt(aux[1])
+    }
+    arrayAux.push(objeto);
+  });
+  return arrayAux;
+}
+function totalSecondsCalculation(mensaje, array) {
+  let min = 0;
+  let seg = 0;
+  let total = 0;
+  array.forEach(element => {
+    min += element.minutos;
+    seg += element.segundos;
+  });
+  total = ((min * 60) + seg);
+  console.log(mensaje + total);
+
+}
+
+//divido el string en una cadena de strings
+const array1 = str.split("</li>");
+//filtro por video "Flexbox Video"
+const aa = searchByName("Flexbox Video", array1);
+//filtro por duracion del video
+const bb = durationFilter(aa);
+//Creo Objetos con los min y seg de cada pelicula
+const cc = minutesSecondsFilter(bb);
+//calculo los segundos totales. 
+totalSecondsCalculation("Segundos totales: ", cc);
+
