@@ -25,6 +25,7 @@ const str = `<ul>
 // Tip: convertir a un array de objetos
 // Tip2: split
 
+<<<<<<< HEAD
 
 
 function searchByName(cadena, array) {
@@ -82,3 +83,36 @@ const cc = minutesSecondsFilter(bb);
 //calculo los segundos totales. 
 totalSecondsCalculation("Segundos totales: ", cc);
 
+=======
+function getVideos(str){
+  return str
+    .replace('<ul>','')
+    .replace('</ul>','')
+    .split('</li>')
+    .slice(0, -1)
+    .map( video => (
+      {
+        min:  parseInt(video
+                      .split('"')[1]
+                      .split(":")[0]),
+        seg: parseInt(video
+                     .split('"')[1]
+                     .split(":")[1]),
+        tipo: video.split('>')[1]
+      }
+    ));
+}
+
+function getTotalSegundos(videos, tipo){
+  let totalsegundos = 0; 
+    videos
+          .filter( video => video.tipo === tipo)
+          .forEach(video => {
+            totalsegundos += video.min * 60 + video.seg;
+          });
+  return totalsegundos;
+}
+
+
+console.log(getTotalSegundos(getVideos(str), "Redux Video"));
+>>>>>>> 5c69f135b9c4249791fc2330d04a2e37c5ef1269

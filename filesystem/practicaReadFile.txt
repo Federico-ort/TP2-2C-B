@@ -1,0 +1,25 @@
+
+Albert       Einstein      1879
+Isaac        Newton        1643
+Galileo      Galilei       1564
+Marie        Curie         1867
+Johannes     Kepler        1571
+Nicolaus     Copernicus    1473
+Max          Planck        1858
+Juan         Perez         1978
+Juan         Perez         1978
+Juan         Perez         1978
+Juan         Perez         1978
+Juan         Perez         1978
+Albert       Einstein      1879
+Isaac        Newton        1643
+Galileo      Galilei       1564
+Marie        Curie         1867
+Johannes     Kepler        1571
+Nicolaus     Copernicus    1473
+Max          Planck        1858
+Juan         Perez         1978
+Juan         Perez         1978
+Juan         Perez         1978
+Juan         Perez         1978
+Juan         Perez         1978

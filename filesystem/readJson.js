@@ -6,7 +6,7 @@ let datos = fs.readFileSync(path, 'utf-8');
 
 datos = JSON.parse(datos);
 
-//console.log(inventors.inventors[0]);
+console.log(datos.inventors[0]);
 
 // Ejercicio
 // Leer el archivo Inventors.json

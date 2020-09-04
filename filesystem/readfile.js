@@ -6,9 +6,9 @@ let datos = fs.readFileSync(path, 'utf-8');
 
 console.log(datos);
 
-datos += 'quiero una 🍕';
+datos += '\nquiero una 🍕';
 
-const path2 = './texto2.txt';
+const path2 = './texto.txt';
 
 fs.writeFileSync(path2, datos);
 console.log('OK');
