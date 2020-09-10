@@ -3,20 +3,41 @@ const IMPOSSIBLE = 'Impossible';
 
 // Complete the organizingContainers function below.
 function organizingContainers(container) {
+    const n = container.length;
+    let resp = POSSIBLE;
+    let sumFilas = new Array(n).fill(0);
+    let sumColumnas = new Array(n).fill(0);
+
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            sumFilas[i] += container[j][i];
+            sumColumnas[i] += container[i][j];
+        }
+    }
+
+    sumColumnas.sort((a,b) => a - b);
+    sumFilas.sort((a,b)=> a - b);
+
+    for (let i = 0; i < n; i++) {
+        if(sumFilas[i] != sumColumnas[i]){
+            resp = IMPOSSIBLE;
+            break;
+        }
+    }
     
-    //return resp;
+    return resp;
 }
 
 console.log(organizingContainers(
     [[1,3,1],
-     [2,1,2],
+     [2,1,2], 
      [3,3,3]]
 )== IMPOSSIBLE);
-
+  
 console.log(organizingContainers(
-    [[0, 2, 1],
-     [1, 1, 1],
-     [2, 0, 0]]
+    [[0, 2, 1] ,
+     [1, 1, 1] , 
+     [2, 0, 0] ]
 )== POSSIBLE);
 
 console.log(organizingContainers(
@@ -24,11 +45,11 @@ console.log(organizingContainers(
     [998799923, 999763019]]
 ) == POSSIBLE);
 
-console.log(organizingContainers(
+console.log(organizingContainers([
     [997612619, 934920795, 998879231, 999926463],
     [960369681, 997828120, 999792735, 979622676],
     [999013654, 998634077, 997988323, 958769423],
-    [997409523, 999301350, 940952923, 993020546]
+    [997409523, 999301350, 940952923, 993020546]]
 )== POSSIBLE);
 
 console.log(organizingContainers(
